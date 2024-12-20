@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  backend:
+    image: mycontainer228.azurecr.io/my-backend:latest
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+    ports:
+        - "8080:8080"
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=db,1433;Database=TaskDB;User Id=sa;Password=2411200a.;TrustServerCertificate=True;
+    networks:
+      - app-net
+    depends_on:
+      - db
+
+  frontend:
+    image: mycontainer228.azurecr.io/my-frontend:latest
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "80:80"
+    networks:
+      - app-net
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      SA_PASSWORD: "2411200a."
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - db-data:/var/opt/mssql
+    networks:
+      - app-net
+
+volumes:
+  db-data:
+
+networks:
+  app-net:
