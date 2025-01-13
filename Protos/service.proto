@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcExample";
+
+package example;
+
+message UserRequest {
+  string username = 1;
+}
+
+message UserResponse {
+  string message = 1;
+}
+
+service UserService {
+  rpc GetUser(UserRequest) returns (UserResponse);
+}
+
+message OrderRequest {
+  string username = 1;
+  string product = 2;
+}
+
+message OrderResponse {
+  string status = 1;
+}
+
+service OrderService {
+  rpc CreateOrder(OrderRequest) returns (OrderResponse);
+}
