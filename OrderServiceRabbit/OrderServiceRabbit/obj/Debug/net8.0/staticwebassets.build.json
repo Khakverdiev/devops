@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "KoFndpXZ3pnxWCJbZQ8G4P2jvVJnVnIuROZ6K/VLGps=",
+  "Source": "OrderServiceRabbit",
+  "BasePath": "_content/OrderServiceRabbit",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
