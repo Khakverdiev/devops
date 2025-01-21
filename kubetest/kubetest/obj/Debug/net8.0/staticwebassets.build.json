@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "iJ+Ibcww2COInG/qZ0whG6jE4UiyGQtL9mIlXVaQJLo=",
+  "Source": "kubetest",
+  "BasePath": "_content/kubetest",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

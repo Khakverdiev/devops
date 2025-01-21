@@ -1,0 +1,25 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-test-deployment
+  labels:
+    app: kube-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kube-test
+  template:
+    metadata:
+      labels:
+        app: kube-test
+    spec:
+      containers:
+        - name: kube-test
+          image: arinnstee/kubetest:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: "Production"
